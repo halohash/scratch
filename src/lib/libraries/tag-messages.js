@@ -231,4 +231,9 @@ export default defineMessages({
         description: 'Tag for filtering a library by math.',
         id: 'pm.libraryTags.math'
     },
+    other: {
+        defaultMessage: 'Other',
+        description: 'Tag for filtering a library by other.',
+        id: 'pm.libraryTags.custom'
+    },
 });
