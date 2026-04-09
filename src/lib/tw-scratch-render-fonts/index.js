@@ -36,8 +36,6 @@ const fontSource = {
     'Bits and Bytes': BitsAndBytes,
     'Playful': Playful,
     'Arcade': Arcade,
-    'Archivo': Archivo,
-    'Archivo Black': ArchivoBlack,
     'Casual': Casual,
     'Big B': BigB
 };

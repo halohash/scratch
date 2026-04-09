@@ -29,25 +29,8 @@ const messages = defineMessages({
     }
 });
 
-const PM_LIBRARY_API = "https://library.penguinmod.com/";
-const getAssetURL = (dataItem) => {
-    // Costume library uses libraryFilePage
-    if (this.props.actor === "CostumeLibrary") {
-        if (dataItem.libraryFilePage) {
-            return `${PM_LIBRARY_API}files/${dataItem.libraryFilePage}`;
-        }
-    }
+const PM_LIBRARY_API = "https://file.garden/aUYIWVAKvQxCBY-_/scratchdata";
 
-    // fallback to rawURL
-    if (dataItem.rawURL) {
-        if (/^https?:\/\//.test(dataItem.rawURL)) {
-            return dataItem.rawURL;
-        }
-        return `${PM_LIBRARY_API}${dataItem.rawURL}`;
-    }
-
-    return null;
-};
 const ALL_TAG = {tag: 'all', intlLabel: messages.allTag};
 const tagListPrefix = [];
 
@@ -196,20 +179,12 @@ class LibraryComponent extends React.Component {
             });
         }
     }
-handleSelect (id, event) {
-    if (event.shiftKey !== true) {
-        this.handleClose();
+    handleSelect (id, event) {
+        if (event.shiftKey !== true) {
+            this.handleClose();
+        }
+        this.props.onItemSelected(this.getFilteredData()[id]);
     }
-
-    const item = this.getFilteredData()[id];
-
-    const fixedItem = {
-        ...item,
-        rawURL: getAssetURL(item) 
-    };
-
-    this.props.onItemSelected(fixedItem);
-}
     handleClose () {
         this.props.onRequestClose();
     }
@@ -484,7 +459,7 @@ handleSelect (id, event) {
                                 isNew={dataItem.tags && dataItem.tags.includes("new")}
                                 href={dataItem.href}
                                 iconMd5={dataItem.costumes ? dataItem.costumes[0].md5ext : dataItem.md5ext}
-                                iconRawURL={this.props.actor === "CostumeLibrary" ? `${PM_LIBRARY_API}files/${dataItem.libraryFilePage}` : dataItem.rawURL}
+                                iconRawURL={this.props.actor === "CostumeLibrary" ? `${PM_LIBRARY_API}/${dataItem.libraryFilePage}` : dataItem.rawURL}
                                 overlayURL={dataItem.overlayURL}
                                 icons={dataItem.costumes}
                                 id={index}
