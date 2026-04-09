@@ -17,8 +17,8 @@ const BitsAndBytes = require('./freecam-v2.ttf');
 const Arcade = require('./PressStart2P.ttf');
 const Archivo = require('./Archivo-Regular.ttf');
 const ArchivoBlack = require('./Archivo-Black.ttf');
-const Casual = require('https://file.garden/aUYIWVAKvQxCBY-_/database/fonts/casual.ttf');
-const BigB = require('https://file.garden/aUYIWVAKvQxCBY-_/database/fonts/symbolrang.ttf');
+const Casual = require('./casual.ttf');
+const BigB = require('./symbolrang.ttf');
 
 const log = require('../log').default;
 
