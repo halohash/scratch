@@ -15774,15 +15774,15 @@
         "rotationCenterY": 56
     },
         {
-        "name": "Conjoined Orange and Pink Slimes",
+        "name": "Conjoined Orange and Pink Slime",
         "tags": [
-            "hash",
+            "custom",
             "new"
         ],
         "bitmapResolution": 1,
         "dataFormat": "svg",
         "rotationCenterX": 0,
         "rotationCenterY": 0,
-        "libraryFilePage": "https://file.garden/aUYIWVAKvQxCBY-_/database/vector/slimesconjoinedtogether.svg"
+        "rawURL": "https://file.garden/aUYIWVAKvQxCBY-_/database/vector/slimesconjoinedtogether.svg"
     }
 ]
