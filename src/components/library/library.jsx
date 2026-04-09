@@ -458,7 +458,13 @@ class LibraryComponent extends React.Component {
                                 hidden={dataItem.hidden}
                                 isNew={dataItem.tags && dataItem.tags.includes("new")}
                                 href={dataItem.href}
-                                iconMd5={dataItem.costumes ? dataItem.costumes[0].md5ext : dataItem.md5ext}
+                                iconMd5={
+  dataItem.rawURL
+    ? null
+    : (dataItem.costumes
+        ? dataItem.costumes[0].md5ext
+        : dataItem.md5ext)
+}
                                 iconRawURL={
   typeof dataItem.rawURL !== "undefined"
     ? dataItem.rawURL
